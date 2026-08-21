@@ -9,10 +9,16 @@ import BlankRightKitCore
 public final class SystemActionExecutor {
     private let service: FileActionService
     private let workspace: NSWorkspace
+    private let asynchronousFailureHandler: ((String, Error) -> Void)?
 
-    public init(service: FileActionService = .init(), workspace: NSWorkspace = .shared) {
+    public init(
+        service: FileActionService = .init(),
+        workspace: NSWorkspace = .shared,
+        asynchronousFailureHandler: ((String, Error) -> Void)? = nil
+    ) {
         self.service = service
         self.workspace = workspace
+        self.asynchronousFailureHandler = asynchronousFailureHandler
     }
 
     public func execute(
@@ -82,7 +88,11 @@ public final class SystemActionExecutor {
             [target],
             withApplicationAt: applicationURL,
             configuration: configuration,
-            completionHandler: nil
+            completionHandler: { [asynchronousFailureHandler] _, error in
+                if let error {
+                    asynchronousFailureHandler?(displayName, error)
+                }
+            }
         )
     }
 }

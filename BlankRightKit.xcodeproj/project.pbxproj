@@ -21,6 +21,7 @@
 		4AE79369F69A4E0565C5380A /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425256BE6CC003714046EEAB /* SettingsStore.swift */; };
 		5089821B30201A3B2A2A69C3 /* ActionID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B3E83B329B19A5B3777BE /* ActionID.swift */; };
 		57D6BABAAAB6B867058A7C9D /* MenuPlanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C5CC663EFF6C9C3FB6DE61 /* MenuPlanner.swift */; };
+		84D4AE214CB2AD379604C5C5 /* TraceLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C663C65B92670616F40ADB /* TraceLogger.swift */; };
 		922755A253E8BEDE29C0A8E8 /* BlankRightKitSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14194B2CA32E74D40FF9A9E7 /* BlankRightKitSettings.swift */; };
 		9758B23380E609EC5CBC201F /* UniqueNameResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8661013B0FCDFC3354376C6 /* UniqueNameResolver.swift */; };
 		9B59DC5DBA1D90D5842CD7C2 /* MenuPlanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C5CC663EFF6C9C3FB6DE61 /* MenuPlanner.swift */; };
@@ -67,6 +68,7 @@
 		22CE5806F01E4B16B1C859C9 /* SystemActionExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemActionExecutor.swift; sourceTree = "<group>"; };
 		361E22A6F277E2AD2D7BB08E /* FinderSync.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FinderSync.framework; path = System/Library/Frameworks/FinderSync.framework; sourceTree = SDKROOT; };
 		425256BE6CC003714046EEAB /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
+		42C663C65B92670616F40ADB /* TraceLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraceLogger.swift; sourceTree = "<group>"; };
 		504D24DBDE10E2B896BDF559 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		5B7BBB0A60011D91AE0FAF9C /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		63A791BFD45725A89E70A524 /* FinderSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderSync.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				63A791BFD45725A89E70A524 /* FinderSync.swift */,
+				42C663C65B92670616F40ADB /* TraceLogger.swift */,
 			);
 			path = FinderExtension;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				57D6BABAAAB6B867058A7C9D /* MenuPlanner.swift in Sources */,
 				0A94EA17B71A01D3A54C7A33 /* SettingsStore.swift in Sources */,
 				ADEB80B91568ABA6014866CD /* SystemActionExecutor.swift in Sources */,
+				84D4AE214CB2AD379604C5C5 /* TraceLogger.swift in Sources */,
 				9758B23380E609EC5CBC201F /* UniqueNameResolver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,7 +385,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 8;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -505,7 +509,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 8;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;

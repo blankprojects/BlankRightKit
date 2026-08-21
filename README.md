@@ -12,7 +12,7 @@ BlankRightKit 是一个免费、开源、原生的 macOS Finder 右键工具箱�
 - 在 Visual Studio Code、Cursor、Zed 或 Xcode 打开
 - 流式计算一个或多个文件的 SHA-256 并复制结果
 - 将常见图片转换为 PNG 或 JPEG
-- 每项功能独立开关；可选择收进单个 `BlankRightKit` 子菜单
+- 每项功能独立开关；可选择收进单个 `BlankRightKit` 子菜单（默认开启）
 - 可编辑新建文件的默认名称、扩展名和初始内容
 - 简体中文原生设置界面
 - 无网络 entitlement、无账号、无广告、无遥测
@@ -34,7 +34,7 @@ BlankRightKit 是一个免费、开源、原生的 macOS Finder 右键工具箱�
 - macOS 13 Ventura 或更新版本
 - Xcode 16 或更新版本
 - [XcodeGen](https://github.com/yonaskolb/XcodeGen) 2.43 或更新版本
-- 自用构建可使用 Xcode 的 `Sign to Run Locally` 临时签名，不需要 Apple ID 或付费开发者会员
+- 自用构建需要免费 Apple ID 对应的 Xcode Personal Team；不需要付费开发者会员
 - 对外分发才需要 Developer ID 或 Mac App Store 签名
 
 ## 构建
@@ -47,28 +47,37 @@ make project
 open BlankRightKit.xcodeproj
 ```
 
-### 自用安装（无需 Apple ID）
+### 自用安装（免费 Personal Team）
+
+先在 Xcode 的 `Settings → Accounts` 登录 Apple ID。将下面的 `<YOUR_TEAM_ID>` 换成 Personal Team 的 Team ID：
 
 ```sh
 DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer xcodebuild \
   -project BlankRightKit.xcodeproj \
   -scheme BlankRightKit \
   -configuration Release \
-  -derivedDataPath LocalDerivedData \
-  CODE_SIGN_STYLE=Manual \
-  CODE_SIGN_IDENTITY=- \
-  DEVELOPMENT_TEAM= \
+  -derivedDataPath SignedDerivedData \
+  -allowProvisioningUpdates \
+  DEVELOPMENT_TEAM=<YOUR_TEAM_ID> \
+  CODE_SIGN_STYLE=Automatic \
   build
 
-ditto LocalDerivedData/Build/Products/Release/BlankRightKit.app /Applications/BlankRightKit.app
+# 升级时先退出并移走旧的 /Applications/BlankRightKit.app，避免合并不同构建的包内容。
+ditto SignedDerivedData/Build/Products/Release/BlankRightKit.app /Applications/BlankRightKit.app
 pluginkit -a /Applications/BlankRightKit.app/Contents/PlugIns/BlankRightKitFinder.appex
 pluginkit -e use -i io.github.blankrightkit.BlankRightKit.FinderExtension
 open /Applications/BlankRightKit.app
 ```
 
-也可以直接在 Xcode 中打开工程，将 Signing Certificate 设为 `Sign to Run Locally` 后运行。首次安装后，可在 App 中点“立即启用”，或前往“系统设置 → 通用 → 登录项与扩展 → Finder”确认扩展已开启。
+也可以直接在 Xcode 中打开工程，为两个 target 开启 `Automatically manage signing` 并选择同一个 Personal Team 后运行。首次安装后，可在 App 中点“立即启用”，或前往“系统设置 → 通用 → 登录项与扩展 → Finder”确认扩展已开启。
 
-只有准备对外分发时，才需要为两个 target 选择同一个 Team、替换 Bundle Identifier，并配置属于该 Team 的 App Group。
+当前 macOS 会拒绝临时签名（`Sign to Run Locally` / ad hoc）的 Finder 扩展：宿主 App 可能能启动，但右键功能不会加载。因此临时签名只适合编译检查，不能用于实际安装测试。
+
+请勿直接把 Debug 和 Release 构建用 `ditto` 合并覆盖到同一个 `.app`；旧文件残留会破坏代码签名。升级前应先退出并移走旧 App，再复制完整的新 App。
+
+当前工程是面向自用的开发签名配置。Finder 扩展保持 App Sandbox，但声明了 `/` 的临时文件读写例外，使原生文件动作能够使用当前登录用户本来就拥有的访问权限；POSIX/ACL、SIP 和隐私控制（TCC）仍然有效。该临时例外不等于 root 或“完全磁盘访问”，遇到系统拒绝时 App 会提示并写入诊断日志。
+
+只有准备对外分发时，才需要 Developer ID 或 Mac App Store 证书、替换 Bundle Identifier，并重新设计为安全范围书签/App Group 等可审核的权限模型；不要直接发布当前自用 entitlement。
 
 修改 `project.yml` 后请重新运行 `make project`。仓库同时提交了生成后的 `.xcodeproj`，未安装 XcodeGen 时也可以直接打开。
 
@@ -88,7 +97,8 @@ make build
 
 - Apple 将 Finder Sync 主要定位为同步类扩展；某些 File Provider/iCloud Drive 目录可能优先使用其自己的扩展，导致菜单不显示。
 - macOS 15.0/15.1 的 Finder 扩展管理界面有已知系统问题，建议使用 15.2 或更高版本。
-- Finder 扩展保持 App Sandbox；自用构建只共享 `~/Library/Application Support/BlankRightKit` 设置目录，并申请“用户所选文件读写”。项目不申请根路径、全磁盘或网络权限，也不提供任意 Shell 脚本执行入口。
+- Finder 扩展保持 App Sandbox；自用构建包含 `com.apple.security.temporary-exception.files.absolute-path.read-write = /`，按当前用户权限处理 Finder 中的目标。它不会绕过 POSIX/ACL、SIP 或 TCC，也不是 root/提权能力。
+- 项目不申请网络权限，也不提供任意 Shell 脚本执行入口。右键点击、目标路径和动作结果会写入扩展容器内的本地 `trace.log`，仅用于诊断，不上传。
 - SHA-256 与图片转换在扩展进程内执行；超大文件的任务队列和可取消进度属于后续版本工作。
 
 ## 路线图
