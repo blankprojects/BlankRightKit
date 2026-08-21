@@ -1,0 +1,570 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		055BBB4B118F2E26B605655B /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC7E954812F5E119292E26FB /* AppKit.framework */; };
+		06B25FF3B58FA868AB17044D /* ActionID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B3E83B329B19A5B3777BE /* ActionID.swift */; };
+		0A94EA17B71A01D3A54C7A33 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425256BE6CC003714046EEAB /* SettingsStore.swift */; };
+		102C4BDAFBA5A9F7309EE316 /* BlankRightKitFinder.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 85E4C31021302107E6427698 /* BlankRightKitFinder.appex */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1FAE9DAB7E183EBBE40B3E0C /* ActionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FA721A9E14118C534027FC /* ActionContext.swift */; };
+		2D94E196AFCE6A1661F2CDE0 /* FinderSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A791BFD45725A89E70A524 /* FinderSync.swift */; };
+		300F708936AD9556DA640D4C /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504D24DBDE10E2B896BDF559 /* DashboardView.swift */; };
+		325048B059BD8D88F78D6C43 /* FinderSync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 361E22A6F277E2AD2D7BB08E /* FinderSync.framework */; };
+		3DAB97A55CF0E09CD3FEB98C /* UniformTypeIdentifiers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E439C09B34EB11E628B18635 /* UniformTypeIdentifiers.framework */; };
+		47F3E2192E099520165B77B4 /* ActionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FA721A9E14118C534027FC /* ActionContext.swift */; };
+		4AE79369F69A4E0565C5380A /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425256BE6CC003714046EEAB /* SettingsStore.swift */; };
+		5089821B30201A3B2A2A69C3 /* ActionID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B3E83B329B19A5B3777BE /* ActionID.swift */; };
+		57D6BABAAAB6B867058A7C9D /* MenuPlanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C5CC663EFF6C9C3FB6DE61 /* MenuPlanner.swift */; };
+		922755A253E8BEDE29C0A8E8 /* BlankRightKitSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14194B2CA32E74D40FF9A9E7 /* BlankRightKitSettings.swift */; };
+		9758B23380E609EC5CBC201F /* UniqueNameResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8661013B0FCDFC3354376C6 /* UniqueNameResolver.swift */; };
+		9B59DC5DBA1D90D5842CD7C2 /* MenuPlanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C5CC663EFF6C9C3FB6DE61 /* MenuPlanner.swift */; };
+		A05CC95AF0A081D6806CFDE0 /* BlankRightKitSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14194B2CA32E74D40FF9A9E7 /* BlankRightKitSettings.swift */; };
+		A324DAF8E3B3AC0C9E252ECE /* FileActionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69789472A97D55EDDC1A44B0 /* FileActionService.swift */; };
+		A5351DADA573199740CFF9DC /* BlankRightKitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBFF7C750665BC6E0D4E080 /* BlankRightKitApp.swift */; };
+		AB97EE34B355E710652AFB64 /* ActionOutcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A322497332549ADDD8A49D /* ActionOutcome.swift */; };
+		ADEB80B91568ABA6014866CD /* SystemActionExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CE5806F01E4B16B1C859C9 /* SystemActionExecutor.swift */; };
+		B41C4247422C7209E9A6B419 /* FinderSync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 361E22A6F277E2AD2D7BB08E /* FinderSync.framework */; };
+		C3E25EEF0229A5B72DDA7E05 /* CryptoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E342206E9A474785DC1A915 /* CryptoKit.framework */; };
+		C709F7AF544CCD346BA658CA /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B7BBB0A60011D91AE0FAF9C /* ImageIO.framework */; };
+		DBC50C471A492CA860489C43 /* BlankRightKitActionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8940F6F9EB8BBB11C22229 /* BlankRightKitActionError.swift */; };
+		E3AA161A86B3B2E46D09428A /* UniqueNameResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8661013B0FCDFC3354376C6 /* UniqueNameResolver.swift */; };
+		E5BB6FF9F5E5F5AF1C77DA01 /* PreferencesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F2297EA28465AAFEB48676 /* PreferencesModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B1D2A07739766322AB9F12CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 89895178FE15E65D19E7A0DB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 14EA4767C3AE2A7E47D60DA3;
+			remoteInfo = BlankRightKitFinder;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C319EB8135656A98E1F35E78 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				102C4BDAFBA5A9F7309EE316 /* BlankRightKitFinder.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		03F2297EA28465AAFEB48676 /* PreferencesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesModel.swift; sourceTree = "<group>"; };
+		14194B2CA32E74D40FF9A9E7 /* BlankRightKitSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankRightKitSettings.swift; sourceTree = "<group>"; };
+		22CE5806F01E4B16B1C859C9 /* SystemActionExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemActionExecutor.swift; sourceTree = "<group>"; };
+		361E22A6F277E2AD2D7BB08E /* FinderSync.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FinderSync.framework; path = System/Library/Frameworks/FinderSync.framework; sourceTree = SDKROOT; };
+		425256BE6CC003714046EEAB /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
+		504D24DBDE10E2B896BDF559 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		5B7BBB0A60011D91AE0FAF9C /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		63A791BFD45725A89E70A524 /* FinderSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderSync.swift; sourceTree = "<group>"; };
+		69789472A97D55EDDC1A44B0 /* FileActionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileActionService.swift; sourceTree = "<group>"; };
+		788B3E83B329B19A5B3777BE /* ActionID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionID.swift; sourceTree = "<group>"; };
+		85E4C31021302107E6427698 /* BlankRightKitFinder.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BlankRightKitFinder.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E342206E9A474785DC1A915 /* CryptoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoKit.framework; path = System/Library/Frameworks/CryptoKit.framework; sourceTree = SDKROOT; };
+		AC7E954812F5E119292E26FB /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		B2A322497332549ADDD8A49D /* ActionOutcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionOutcome.swift; sourceTree = "<group>"; };
+		B8661013B0FCDFC3354376C6 /* UniqueNameResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniqueNameResolver.swift; sourceTree = "<group>"; };
+		BDBFF7C750665BC6E0D4E080 /* BlankRightKitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankRightKitApp.swift; sourceTree = "<group>"; };
+		C4FA721A9E14118C534027FC /* ActionContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionContext.swift; sourceTree = "<group>"; };
+		CF8940F6F9EB8BBB11C22229 /* BlankRightKitActionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankRightKitActionError.swift; sourceTree = "<group>"; };
+		D403E407E38DDE9A010AD925 /* BlankRightKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlankRightKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3C5CC663EFF6C9C3FB6DE61 /* MenuPlanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPlanner.swift; sourceTree = "<group>"; };
+		E439C09B34EB11E628B18635 /* UniformTypeIdentifiers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UniformTypeIdentifiers.framework; path = System/Library/Frameworks/UniformTypeIdentifiers.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		41E5FA093B1622463604743D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				325048B059BD8D88F78D6C43 /* FinderSync.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D36B4D1CCA86D336344AB1A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				055BBB4B118F2E26B605655B /* AppKit.framework in Frameworks */,
+				C3E25EEF0229A5B72DDA7E05 /* CryptoKit.framework in Frameworks */,
+				B41C4247422C7209E9A6B419 /* FinderSync.framework in Frameworks */,
+				C709F7AF544CCD346BA658CA /* ImageIO.framework in Frameworks */,
+				3DAB97A55CF0E09CD3FEB98C /* UniformTypeIdentifiers.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		188C32C9317C1085A789DAE6 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				BDBFF7C750665BC6E0D4E080 /* BlankRightKitApp.swift */,
+				504D24DBDE10E2B896BDF559 /* DashboardView.swift */,
+				03F2297EA28465AAFEB48676 /* PreferencesModel.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		330A1FA041B2A96E839EC88C /* FinderExtension */ = {
+			isa = PBXGroup;
+			children = (
+				63A791BFD45725A89E70A524 /* FinderSync.swift */,
+			);
+			path = FinderExtension;
+			sourceTree = "<group>";
+		};
+		3D1784E999CCE9E86B158E51 = {
+			isa = PBXGroup;
+			children = (
+				188C32C9317C1085A789DAE6 /* App */,
+				330A1FA041B2A96E839EC88C /* FinderExtension */,
+				9431EB69F0377A936985EF42 /* Shared */,
+				D365DE76A5ED99B44E65C6DE /* Frameworks */,
+				B0C1F83E8931267DCA765082 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4CE8368777D61AF3F92FB671 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				B10703A280F738D8D58732ED /* BlankRightKitActions */,
+				CFD50CD0C97B5D0DCB65718D /* BlankRightKitCore */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		9431EB69F0377A936985EF42 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				4CE8368777D61AF3F92FB671 /* Sources */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		B0C1F83E8931267DCA765082 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D403E407E38DDE9A010AD925 /* BlankRightKit.app */,
+				85E4C31021302107E6427698 /* BlankRightKitFinder.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B10703A280F738D8D58732ED /* BlankRightKitActions */ = {
+			isa = PBXGroup;
+			children = (
+				B2A322497332549ADDD8A49D /* ActionOutcome.swift */,
+				CF8940F6F9EB8BBB11C22229 /* BlankRightKitActionError.swift */,
+				69789472A97D55EDDC1A44B0 /* FileActionService.swift */,
+				22CE5806F01E4B16B1C859C9 /* SystemActionExecutor.swift */,
+			);
+			path = BlankRightKitActions;
+			sourceTree = "<group>";
+		};
+		CFD50CD0C97B5D0DCB65718D /* BlankRightKitCore */ = {
+			isa = PBXGroup;
+			children = (
+				C4FA721A9E14118C534027FC /* ActionContext.swift */,
+				788B3E83B329B19A5B3777BE /* ActionID.swift */,
+				14194B2CA32E74D40FF9A9E7 /* BlankRightKitSettings.swift */,
+				E3C5CC663EFF6C9C3FB6DE61 /* MenuPlanner.swift */,
+				425256BE6CC003714046EEAB /* SettingsStore.swift */,
+				B8661013B0FCDFC3354376C6 /* UniqueNameResolver.swift */,
+			);
+			path = BlankRightKitCore;
+			sourceTree = "<group>";
+		};
+		D365DE76A5ED99B44E65C6DE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AC7E954812F5E119292E26FB /* AppKit.framework */,
+				9E342206E9A474785DC1A915 /* CryptoKit.framework */,
+				361E22A6F277E2AD2D7BB08E /* FinderSync.framework */,
+				5B7BBB0A60011D91AE0FAF9C /* ImageIO.framework */,
+				E439C09B34EB11E628B18635 /* UniformTypeIdentifiers.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		14EA4767C3AE2A7E47D60DA3 /* BlankRightKitFinder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF93F7E38980E515C3538810 /* Build configuration list for PBXNativeTarget "BlankRightKitFinder" */;
+			buildPhases = (
+				C5C1D895151313066F69DF6C /* Sources */,
+				D36B4D1CCA86D336344AB1A6 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BlankRightKitFinder;
+			packageProductDependencies = (
+			);
+			productName = BlankRightKitFinder;
+			productReference = 85E4C31021302107E6427698 /* BlankRightKitFinder.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		B0C892C8DA5F1DBA25EC8453 /* BlankRightKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE6919BF74ED537DA1793528 /* Build configuration list for PBXNativeTarget "BlankRightKit" */;
+			buildPhases = (
+				51E0ACB921DBE878F4D004B4 /* Sources */,
+				41E5FA093B1622463604743D /* Frameworks */,
+				C319EB8135656A98E1F35E78 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C9C9F878E812AD59E322FE06 /* PBXTargetDependency */,
+			);
+			name = BlankRightKit;
+			packageProductDependencies = (
+			);
+			productName = BlankRightKit;
+			productReference = D403E407E38DDE9A010AD925 /* BlankRightKit.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		89895178FE15E65D19E7A0DB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					14EA4767C3AE2A7E47D60DA3 = {
+						ProvisioningStyle = Automatic;
+					};
+					B0C892C8DA5F1DBA25EC8453 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 449A1529D79B114A427BDAA0 /* Build configuration list for PBXProject "BlankRightKit" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 3D1784E999CCE9E86B158E51;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 54;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B0C892C8DA5F1DBA25EC8453 /* BlankRightKit */,
+				14EA4767C3AE2A7E47D60DA3 /* BlankRightKitFinder */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		51E0ACB921DBE878F4D004B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47F3E2192E099520165B77B4 /* ActionContext.swift in Sources */,
+				5089821B30201A3B2A2A69C3 /* ActionID.swift in Sources */,
+				A5351DADA573199740CFF9DC /* BlankRightKitApp.swift in Sources */,
+				922755A253E8BEDE29C0A8E8 /* BlankRightKitSettings.swift in Sources */,
+				300F708936AD9556DA640D4C /* DashboardView.swift in Sources */,
+				9B59DC5DBA1D90D5842CD7C2 /* MenuPlanner.swift in Sources */,
+				E5BB6FF9F5E5F5AF1C77DA01 /* PreferencesModel.swift in Sources */,
+				4AE79369F69A4E0565C5380A /* SettingsStore.swift in Sources */,
+				E3AA161A86B3B2E46D09428A /* UniqueNameResolver.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5C1D895151313066F69DF6C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FAE9DAB7E183EBBE40B3E0C /* ActionContext.swift in Sources */,
+				06B25FF3B58FA868AB17044D /* ActionID.swift in Sources */,
+				AB97EE34B355E710652AFB64 /* ActionOutcome.swift in Sources */,
+				DBC50C471A492CA860489C43 /* BlankRightKitActionError.swift in Sources */,
+				A05CC95AF0A081D6806CFDE0 /* BlankRightKitSettings.swift in Sources */,
+				A324DAF8E3B3AC0C9E252ECE /* FileActionService.swift in Sources */,
+				2D94E196AFCE6A1661F2CDE0 /* FinderSync.swift in Sources */,
+				57D6BABAAAB6B867058A7C9D /* MenuPlanner.swift in Sources */,
+				0A94EA17B71A01D3A54C7A33 /* SettingsStore.swift in Sources */,
+				ADEB80B91568ABA6014866CD /* SystemActionExecutor.swift in Sources */,
+				9758B23380E609EC5CBC201F /* UniqueNameResolver.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C9C9F878E812AD59E322FE06 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 14EA4767C3AE2A7E47D60DA3 /* BlankRightKitFinder */;
+			targetProxy = B1D2A07739766322AB9F12CE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		043FEF4906CA617AD49E8727 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		16F7542EFAFED1DB931C2116 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = FinderExtension/BlankRightKitFinder.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_APP_SANDBOX = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = FinderExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.blankrightkit.BlankRightKit.FinderExtension;
+				PRODUCT_MODULE_NAME = BlankRightKitFinder;
+				PRODUCT_NAME = BlankRightKitFinder;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		47848981F8118667859DA64F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = App/BlankRightKit.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_APP_SANDBOX = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = App/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.blankrightkit.BlankRightKit;
+				PRODUCT_NAME = BlankRightKit;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		4E9354D312D7103BF64A74F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = FinderExtension/BlankRightKitFinder.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_APP_SANDBOX = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = FinderExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.blankrightkit.BlankRightKit.FinderExtension;
+				PRODUCT_MODULE_NAME = BlankRightKitFinder;
+				PRODUCT_NAME = BlankRightKitFinder;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		C61F5699AAD2DB99AB09E2E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		E56175F9773666DE6A08555E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = App/BlankRightKit.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_APP_SANDBOX = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = App/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.blankrightkit.BlankRightKit;
+				PRODUCT_NAME = BlankRightKit;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		449A1529D79B114A427BDAA0 /* Build configuration list for PBXProject "BlankRightKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C61F5699AAD2DB99AB09E2E6 /* Debug */,
+				043FEF4906CA617AD49E8727 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		CE6919BF74ED537DA1793528 /* Build configuration list for PBXNativeTarget "BlankRightKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47848981F8118667859DA64F /* Debug */,
+				E56175F9773666DE6A08555E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		FF93F7E38980E515C3538810 /* Build configuration list for PBXNativeTarget "BlankRightKitFinder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E9354D312D7103BF64A74F1 /* Debug */,
+				16F7542EFAFED1DB931C2116 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 89895178FE15E65D19E7A0DB /* Project object */;
+}

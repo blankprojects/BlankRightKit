@@ -1,8 +1,8 @@
-# Xcode 与 RightKit 开发环境
+# Xcode 与 BlankRightKit 开发环境
 
 ## 安装完整 Xcode
 
-RightKit 包含 macOS App 和 Finder Sync App Extension，只有 Command Line Tools 不够，需要完整 Xcode。
+BlankRightKit 包含 macOS App 和 Finder Sync App Extension，只有 Command Line Tools 不够，需要完整 Xcode。
 
 最简单的方式是在 Mac App Store 搜索“Xcode”并安装。也可以在已登录 App Store 的机器上使用：
 
@@ -28,30 +28,45 @@ swift --version
 
 ```sh
 brew install xcodegen
-cd RightKit
+cd BlankRightKit
 xcodegen generate
 ```
 
-仓库提交了生成后的 `RightKit.xcodeproj`，但修改 `project.yml` 后必须重新生成。
+仓库提交了生成后的 `BlankRightKit.xcodeproj`，但修改 `project.yml` 后必须重新生成。
 
-## 配置签名
+## 自用签名与安装
 
-打开 `RightKit.xcodeproj`：
+自用不需要 Apple ID 或付费开发者会员。使用 Xcode 内置的临时签名即可：
 
-1. Xcode → Settings → Accounts，添加 Apple ID。
-2. 在 Project Navigator 中选择项目，再选择 `RightKit` target。
-3. Signing & Capabilities → Team，选择自己的 Team。
-4. 对 `RightKitFinder` target 做相同设置。
-5. 两个 target 必须使用同一个 Team 和同一个 App Group。
+```sh
+DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer xcodebuild \
+  -project BlankRightKit.xcodeproj \
+  -scheme BlankRightKit \
+  -configuration Release \
+  -derivedDataPath LocalDerivedData \
+  CODE_SIGN_STYLE=Manual \
+  CODE_SIGN_IDENTITY=- \
+  DEVELOPMENT_TEAM= \
+  build
+```
 
-直接 fork 时请替换默认 Bundle Identifier 与 `group.io.github.rightkit`，否则无法在你的 Team 下创建匹配的 provisioning profile。README 列出了四个修改位置。
+构建日志中的 Signing Identity 应显示 `Sign to Run Locally`。安装并启用：
 
-只验证编译、不运行扩展时，可以跳过签名：
+```sh
+ditto LocalDerivedData/Build/Products/Release/BlankRightKit.app /Applications/BlankRightKit.app
+pluginkit -a /Applications/BlankRightKit.app/Contents/PlugIns/BlankRightKitFinder.appex
+pluginkit -e use -i io.github.blankrightkit.BlankRightKit.FinderExtension
+open /Applications/BlankRightKit.app
+```
+
+准备对外发布时，才需要登录 Apple ID，为宿主和扩展选择同一个 Team，替换默认 Bundle Identifier，并配置对应的 App Group。
+
+只验证编译、不运行扩展时，也可以完全跳过签名：
 
 ```sh
 xcodebuild \
-  -project RightKit.xcodeproj \
-  -scheme RightKit \
+  -project BlankRightKit.xcodeproj \
+  -scheme BlankRightKit \
   -configuration Debug \
   CODE_SIGNING_ALLOWED=NO \
   build
@@ -69,4 +84,4 @@ xcodebuild \
 pluginkit -m -p com.apple.FinderSync
 ```
 
-修改扩展后 Finder 没有刷新，可先退出正在运行的 RightKit，再在开发环境中重新运行；必要时重新开关扩展。不要把 `killall Finder` 放进安装脚本，避免突然关闭用户正在操作的 Finder 窗口。
+修改扩展后 Finder 没有刷新，可先退出正在运行的 BlankRightKit，再在开发环境中重新运行；必要时重新开关扩展。不要把 `killall Finder` 放进安装脚本，避免突然关闭用户正在操作的 Finder 窗口。

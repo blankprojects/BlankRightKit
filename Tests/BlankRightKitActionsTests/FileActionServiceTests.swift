@@ -1,8 +1,8 @@
 import Foundation
 import Testing
 import UniformTypeIdentifiers
-@testable import RightKitActions
-@testable import RightKitCore
+@testable import BlankRightKitActions
+@testable import BlankRightKitCore
 
 @Suite("File actions")
 struct FileActionServiceTests {

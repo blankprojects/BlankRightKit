@@ -15,10 +15,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B70BB768EC0FDFBF8ED44691"
-               BuildableName = "RightKit.app"
-               BlueprintName = "RightKit"
-               ReferencedContainer = "container:RightKit.xcodeproj">
+               BlueprintIdentifier = "B0C892C8DA5F1DBA25EC8453"
+               BuildableName = "BlankRightKit.app"
+               BlueprintName = "BlankRightKit"
+               ReferencedContainer = "container:BlankRightKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,10 +29,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "16C9CB987A31B7A6E3196F57"
-               BuildableName = "RightKitFinder.appex"
-               BlueprintName = "RightKitFinder"
-               ReferencedContainer = "container:RightKit.xcodeproj">
+               BlueprintIdentifier = "14EA4767C3AE2A7E47D60DA3"
+               BuildableName = "BlankRightKitFinder.appex"
+               BlueprintName = "BlankRightKitFinder"
+               ReferencedContainer = "container:BlankRightKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,10 +46,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B70BB768EC0FDFBF8ED44691"
-            BuildableName = "RightKit.app"
-            BlueprintName = "RightKit"
-            ReferencedContainer = "container:RightKit.xcodeproj">
+            BlueprintIdentifier = "B0C892C8DA5F1DBA25EC8453"
+            BuildableName = "BlankRightKit.app"
+            BlueprintName = "BlankRightKit"
+            ReferencedContainer = "container:BlankRightKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <Testables>
@@ -69,10 +69,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B70BB768EC0FDFBF8ED44691"
-            BuildableName = "RightKit.app"
-            BlueprintName = "RightKit"
-            ReferencedContainer = "container:RightKit.xcodeproj">
+            BlueprintIdentifier = "B0C892C8DA5F1DBA25EC8453"
+            BuildableName = "BlankRightKit.app"
+            BlueprintName = "BlankRightKit"
+            ReferencedContainer = "container:BlankRightKit.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <CommandLineArguments>
@@ -88,10 +88,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B70BB768EC0FDFBF8ED44691"
-            BuildableName = "RightKit.app"
-            BlueprintName = "RightKit"
-            ReferencedContainer = "container:RightKit.xcodeproj">
+            BlueprintIdentifier = "B0C892C8DA5F1DBA25EC8453"
+            BuildableName = "BlankRightKit.app"
+            BlueprintName = "BlankRightKit"
+            ReferencedContainer = "container:BlankRightKit.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -34,7 +34,7 @@ private struct GeneralSettingsView: View {
 
                 GroupBox("菜单样式") {
                     Toggle(
-                        "把所有功能收进一个“RightKit”子菜单",
+                        "把所有功能收进一个“BlankRightKit”子菜单",
                         isOn: Binding(
                             get: { model.settings.groupIntoSubmenu },
                             set: model.setGroupIntoSubmenu
@@ -120,7 +120,7 @@ private struct HeaderView: View {
                     in: RoundedRectangle(cornerRadius: 15)
                 )
             VStack(alignment: .leading, spacing: 4) {
-                Text("RightKit")
+                Text("BlankRightKit")
                     .font(.largeTitle.bold())
                 Text("开源、原生、只在本机运行的 Finder 右键工具箱")
                     .foregroundStyle(.secondary)
@@ -218,7 +218,7 @@ private struct PrivacyView: View {
                 .font(.largeTitle.bold())
             Label("没有网络权限", systemImage: "wifi.slash")
                 .font(.title3.bold())
-            Text("RightKit 不包含账户、广告、遥测或更新检查。文件名、路径和文件内容不会离开你的 Mac。")
+            Text("BlankRightKit 不包含账户、广告、遥测或更新检查。文件名、路径和文件内容不会离开你的 Mac。")
                 .foregroundStyle(.secondary)
             Label("没有高风险快捷操作", systemImage: "trash.slash")
                 .font(.title3.bold())
@@ -242,7 +242,7 @@ private struct AboutView: View {
             Image(systemName: "cursorarrow.click.2")
                 .font(.system(size: 54))
                 .foregroundStyle(.blue)
-            Text("RightKit")
+            Text("BlankRightKit")
                 .font(.largeTitle.bold())
             Text("版本 0.1.0 · MIT License")
                 .foregroundStyle(.secondary)

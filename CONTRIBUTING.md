@@ -1,6 +1,6 @@
 # Contributing
 
-感谢参与 RightKit。
+感谢参与 BlankRightKit。
 
 ## 提交前
 
@@ -15,7 +15,7 @@
 ```sh
 swift test
 xcodegen generate
-xcodebuild -project RightKit.xcodeproj -scheme RightKit CODE_SIGNING_ALLOWED=NO build
+xcodebuild -project BlankRightKit.xcodeproj -scheme BlankRightKit CODE_SIGNING_ALLOWED=NO build
 ```
 
 ## 代码风格

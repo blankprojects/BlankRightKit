@@ -1,6 +1,6 @@
 import Foundation
 import Testing
-@testable import RightKitCore
+@testable import BlankRightKitCore
 
 @Suite("Menu planning")
 struct MenuPlannerTests {
@@ -18,7 +18,7 @@ struct MenuPlannerTests {
 
     @Test("Action order and disabled state are respected")
     func orderAndVisibility() {
-        var settings = RightKitSettings.default
+        var settings = BlankRightKitSettings.default
         settings.orderedActions = [.copyName, .copyPath, .newFolder]
         settings.enabledActions.remove(.copyPath)
 

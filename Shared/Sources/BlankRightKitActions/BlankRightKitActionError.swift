@@ -1,6 +1,6 @@
 import Foundation
 
-public enum RightKitActionError: LocalizedError, Equatable {
+public enum BlankRightKitActionError: LocalizedError, Equatable {
     case missingDestination
     case missingSelection
     case templateNotFound
@@ -23,7 +23,7 @@ public enum RightKitActionError: LocalizedError, Equatable {
         case .cannotRead(let name):
             return "无法读取“\(name)”。"
         case .applicationNotInstalled(let name):
-            return "未安装 \(name)，请在 RightKit 设置中更换应用。"
+            return "未安装 \(name)，请在 BlankRightKit 设置中更换应用。"
         case .unsupportedImage(let name):
             return "“\(name)”不是受支持的图片。"
         case .imageConversionFailed(let name):

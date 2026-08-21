@@ -2,31 +2,31 @@
 import PackageDescription
 
 let package = Package(
-    name: "RightKit",
+    name: "BlankRightKit",
     platforms: [.macOS(.v13)],
     products: [
-        .library(name: "RightKitCore", targets: ["RightKitCore"]),
-        .library(name: "RightKitActions", targets: ["RightKitActions"])
+        .library(name: "BlankRightKitCore", targets: ["BlankRightKitCore"]),
+        .library(name: "BlankRightKitActions", targets: ["BlankRightKitActions"])
     ],
     targets: [
         .target(
-            name: "RightKitCore",
-            path: "Shared/Sources/RightKitCore"
+            name: "BlankRightKitCore",
+            path: "Shared/Sources/BlankRightKitCore"
         ),
         .target(
-            name: "RightKitActions",
-            dependencies: ["RightKitCore"],
-            path: "Shared/Sources/RightKitActions"
+            name: "BlankRightKitActions",
+            dependencies: ["BlankRightKitCore"],
+            path: "Shared/Sources/BlankRightKitActions"
         ),
         .testTarget(
-            name: "RightKitCoreTests",
-            dependencies: ["RightKitCore"],
-            path: "Tests/RightKitCoreTests"
+            name: "BlankRightKitCoreTests",
+            dependencies: ["BlankRightKitCore"],
+            path: "Tests/BlankRightKitCoreTests"
         ),
         .testTarget(
-            name: "RightKitActionsTests",
-            dependencies: ["RightKitActions", "RightKitCore"],
-            path: "Tests/RightKitActionsTests"
+            name: "BlankRightKitActionsTests",
+            dependencies: ["BlankRightKitActions", "BlankRightKitCore"],
+            path: "Tests/BlankRightKitActionsTests"
         )
     ],
     swiftLanguageModes: [.v5]

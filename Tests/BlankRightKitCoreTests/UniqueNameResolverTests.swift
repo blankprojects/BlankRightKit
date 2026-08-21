@@ -1,6 +1,6 @@
 import Foundation
 import Testing
-@testable import RightKitCore
+@testable import BlankRightKitCore
 
 @Suite("Unique file naming")
 struct UniqueNameResolverTests {

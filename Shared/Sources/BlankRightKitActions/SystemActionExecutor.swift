@@ -3,7 +3,7 @@ import Foundation
 import UniformTypeIdentifiers
 
 #if SWIFT_PACKAGE
-import RightKitCore
+import BlankRightKitCore
 #endif
 
 public final class SystemActionExecutor {
@@ -18,7 +18,7 @@ public final class SystemActionExecutor {
     public func execute(
         _ action: ActionID,
         context: ActionContext,
-        settings: RightKitSettings
+        settings: BlankRightKitSettings
     ) throws -> ActionOutcome {
         let outcome: ActionOutcome
 
@@ -62,7 +62,7 @@ public final class SystemActionExecutor {
         useParentForFiles: Bool
     ) throws {
         guard var target = context.effectiveURLs.first else {
-            throw RightKitActionError.missingSelection
+            throw BlankRightKitActionError.missingSelection
         }
 
         if useParentForFiles {
@@ -73,7 +73,7 @@ public final class SystemActionExecutor {
         }
 
         guard let applicationURL = workspace.urlForApplication(withBundleIdentifier: bundleIdentifier) else {
-            throw RightKitActionError.applicationNotInstalled(displayName)
+            throw BlankRightKitActionError.applicationNotInstalled(displayName)
         }
 
         let configuration = NSWorkspace.OpenConfiguration()

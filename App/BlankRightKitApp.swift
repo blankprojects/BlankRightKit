@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct RightKitApp: App {
+struct BlankRightKitApp: App {
     @StateObject private var preferences = PreferencesModel()
 
     var body: some Scene {

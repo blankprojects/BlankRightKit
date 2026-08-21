@@ -5,13 +5,13 @@ public struct MenuPlanner: Sendable {
 
     public init() {}
 
-    public func visibleActions(settings: RightKitSettings, context: ActionContext) -> [ActionID] {
+    public func visibleActions(settings: BlankRightKitSettings, context: ActionContext) -> [ActionID] {
         settings.orderedActions.filter { action in
             settings.enabledActions.contains(action) && isApplicable(action, to: context)
         }
     }
 
-    public func actionsBySection(settings: RightKitSettings, context: ActionContext) -> [(ActionSection, [ActionID])] {
+    public func actionsBySection(settings: BlankRightKitSettings, context: ActionContext) -> [(ActionSection, [ActionID])] {
         let visible = visibleActions(settings: settings, context: context)
         return ActionSection.allCases.compactMap { section in
             let actions = visible.filter { $0.section == section }

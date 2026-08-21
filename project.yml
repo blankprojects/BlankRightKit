@@ -1,4 +1,4 @@
-name: RightKit
+name: BlankRightKit
 
 options:
   minimumXcodeGenVersion: 2.43.0
@@ -17,48 +17,60 @@ settings:
     SWIFT_EMIT_LOC_STRINGS: YES
 
 targets:
-  RightKit:
+  BlankRightKit:
     type: application
     platform: macOS
     sources:
       - path: App
         excludes:
           - Info.plist
-          - RightKit.entitlements
-      - path: Shared/Sources/RightKitCore
+          - BlankRightKit.entitlements
+      - path: Shared/Sources/BlankRightKitCore
     resources:
       - path: Resources
     info:
       path: App/Info.plist
     entitlements:
-      path: App/RightKit.entitlements
+      path: App/BlankRightKit.entitlements
+      properties:
+        com.apple.security.temporary-exception.files.home-relative-path.read-write:
+          - /Library/Application Support/BlankRightKit/
     dependencies:
-      - target: RightKitFinder
+      - target: BlankRightKitFinder
         embed: true
         codeSign: true
       - sdk: FinderSync.framework
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: io.github.rightkit.RightKit
-        PRODUCT_NAME: RightKit
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.blankrightkit.BlankRightKit
+        PRODUCT_NAME: BlankRightKit
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         ENABLE_APP_SANDBOX: YES
         GENERATE_INFOPLIST_FILE: NO
 
-  RightKitFinder:
+  BlankRightKitFinder:
     type: app-extension
     platform: macOS
     sources:
       - path: FinderExtension
         excludes:
           - Info.plist
-          - RightKitFinder.entitlements
-      - path: Shared/Sources/RightKitCore
-      - path: Shared/Sources/RightKitActions
+          - BlankRightKitFinder.entitlements
+      - path: Shared/Sources/BlankRightKitCore
+      - path: Shared/Sources/BlankRightKitActions
     info:
       path: FinderExtension/Info.plist
+      properties:
+        NSExtension:
+          NSExtensionAttributes: {}
+          NSExtensionPointIdentifier: com.apple.FinderSync
+          NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).FinderSync
     entitlements:
-      path: FinderExtension/RightKitFinder.entitlements
+      path: FinderExtension/BlankRightKitFinder.entitlements
+      properties:
+        com.apple.security.files.user-selected.read-write: true
+        com.apple.security.temporary-exception.files.home-relative-path.read-write:
+          - /Library/Application Support/BlankRightKit/
     dependencies:
       - sdk: AppKit.framework
       - sdk: CryptoKit.framework
@@ -67,20 +79,20 @@ targets:
       - sdk: UniformTypeIdentifiers.framework
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: io.github.rightkit.RightKit.FinderExtension
-        PRODUCT_MODULE_NAME: RightKitFinder
-        PRODUCT_NAME: RightKitFinder
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.blankrightkit.BlankRightKit.FinderExtension
+        PRODUCT_MODULE_NAME: BlankRightKitFinder
+        PRODUCT_NAME: BlankRightKitFinder
         APPLICATION_EXTENSION_API_ONLY: YES
         ENABLE_APP_SANDBOX: YES
         GENERATE_INFOPLIST_FILE: NO
         SKIP_INSTALL: YES
 
 schemes:
-  RightKit:
+  BlankRightKit:
     build:
       targets:
-        RightKit: all
-        RightKitFinder: all
+        BlankRightKit: all
+        BlankRightKitFinder: all
     run:
       config: Debug
     archive:

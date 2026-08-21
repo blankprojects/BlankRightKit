@@ -2,7 +2,7 @@ import Foundation
 
 @MainActor
 final class PreferencesModel: ObservableObject {
-    @Published private(set) var settings: RightKitSettings
+    @Published private(set) var settings: BlankRightKitSettings
     @Published private(set) var saveError: String?
 
     private let store: SettingsStore
@@ -51,7 +51,7 @@ final class PreferencesModel: ObservableObject {
         saveError = nil
     }
 
-    private func update(_ mutate: (inout RightKitSettings) -> Void) {
+    private func update(_ mutate: (inout BlankRightKitSettings) -> Void) {
         var copy = settings
         mutate(&copy)
         settings = copy

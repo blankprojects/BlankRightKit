@@ -4,7 +4,7 @@
 
 ## 范围说明
 
-“市面上所有信息”无法被严格证明穷尽：Mac App Store 地区定价、独立站产品和新发布项目持续变化。本调研覆盖公开可发现的代表性商业产品、免费产品、开源实现、近期用户反馈和 Apple 官方技术边界，目标是指导 RightKit 的产品与工程决策，而不是制作永久完整的产品目录。
+“市面上所有信息”无法被严格证明穷尽：Mac App Store 地区定价、独立站产品和新发布项目持续变化。本调研覆盖公开可发现的代表性商业产品、免费产品、开源实现、近期用户反馈和 Apple 官方技术边界，目标是指导 BlankRightKit 的产品与工程决策，而不是制作永久完整的产品目录。
 
 价格均为调研时页面显示，税费、地区和促销会导致变化。
 
@@ -61,15 +61,15 @@ Apple 的 [Finder Sync 指南](https://developer.apple.com/library/archive/docum
 - `targetedURL` 和 `selectedItemURLs` 只保证在菜单创建及其 action 执行期间有效。
 - Finder、打开/保存面板可能启动多个扩展实例；扩展应保持轻量。
 - 宿主 App 与扩展可通过同一个 App Group 的 shared user defaults 共享设置。
-- Finder Sync 最初面向同步软件，Apple 明确说它不是通用 Finder UI 修改入口。RightKit 因而必须保持 API 使用保守，并持续做系统版本回归测试。
+- Finder Sync 最初面向同步软件，Apple 明确说它不是通用 Finder UI 修改入口。BlankRightKit 因而必须保持 API 使用保守，并持续做系统版本回归测试。
 
-Apple 的 [App Sandbox 文件访问文档](https://developer.apple.com/documentation/security/accessing-files-from-the-macos-app-sandbox) 还要求：沙箱 App 只能访问容器或用户明确授予的文件范围；持久访问要使用 security-scoped bookmarks。RightKit 不应通过 `Process` 绕过该边界。
+Apple 的 [App Sandbox 文件访问文档](https://developer.apple.com/documentation/security/accessing-files-from-the-macos-app-sandbox) 还要求：沙箱 App 只能访问容器或用户明确授予的文件范围；持久访问要使用 security-scoped bookmarks。BlankRightKit 不应通过 `Process` 绕过该边界。
 
 macOS 15.0/15.1 曾出现 Finder Sync 管理 UI 不可见的问题，Apple 开发者论坛记录显示 15.2 beta 2 已恢复相关 UI：[讨论](https://developer.apple.com/forums/thread/756711)。
 
-## RightKit 0.1 的定位
+## BlankRightKit 0.1 的定位
 
-RightKit 选择“安全原生动作集”，而不是脚本市场：
+BlankRightKit 选择“安全原生动作集”，而不是脚本市场：
 
 | 原则 | 0.1 决策 |
 |---|---|

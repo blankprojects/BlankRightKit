@@ -9,4 +9,4 @@ if ! command -v xcodegen >/dev/null 2>&1; then
 fi
 
 xcodegen generate
-print "已生成 RightKit.xcodeproj"
+print "已生成 BlankRightKit.xcodeproj"

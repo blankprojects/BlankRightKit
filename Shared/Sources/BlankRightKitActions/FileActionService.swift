@@ -4,7 +4,7 @@ import ImageIO
 import UniformTypeIdentifiers
 
 #if SWIFT_PACKAGE
-import RightKitCore
+import BlankRightKitCore
 #endif
 
 public struct FileActionService {
@@ -16,9 +16,9 @@ public struct FileActionService {
         self.nameResolver = nameResolver
     }
 
-    public func createFile(for action: ActionID, context: ActionContext, settings: RightKitSettings) throws -> ActionOutcome {
+    public func createFile(for action: ActionID, context: ActionContext, settings: BlankRightKitSettings) throws -> ActionOutcome {
         guard let directory = context.destinationDirectory else {
-            throw RightKitActionError.missingDestination
+            throw BlankRightKitActionError.missingDestination
         }
 
         let templateID: String
@@ -26,11 +26,11 @@ public struct FileActionService {
         case .newTextFile: templateID = "text"
         case .newMarkdownFile: templateID = "markdown"
         case .newJSONFile: templateID = "json"
-        default: throw RightKitActionError.templateNotFound
+        default: throw BlankRightKitActionError.templateNotFound
         }
 
         guard let template = settings.templates.first(where: { $0.id == templateID }) else {
-            throw RightKitActionError.templateNotFound
+            throw BlankRightKitActionError.templateNotFound
         }
 
         let url = nameResolver.availableURL(
@@ -44,7 +44,7 @@ public struct FileActionService {
             let data = template.contents.data(using: .utf8) ?? Data()
             try data.write(to: url, options: .withoutOverwriting)
         } catch {
-            throw RightKitActionError.cannotCreate(url.lastPathComponent)
+            throw BlankRightKitActionError.cannotCreate(url.lastPathComponent)
         }
 
         return ActionOutcome(message: "已创建 \(url.lastPathComponent)", createdURLs: [url])
@@ -52,7 +52,7 @@ public struct FileActionService {
 
     public func createFolder(context: ActionContext) throws -> ActionOutcome {
         guard let directory = context.destinationDirectory else {
-            throw RightKitActionError.missingDestination
+            throw BlankRightKitActionError.missingDestination
         }
 
         let url = nameResolver.availableURL(
@@ -65,13 +65,13 @@ public struct FileActionService {
             try fileManager.createDirectory(at: url, withIntermediateDirectories: false)
             return ActionOutcome(message: "已创建 \(url.lastPathComponent)", createdURLs: [url])
         } catch {
-            throw RightKitActionError.cannotCreate(url.lastPathComponent)
+            throw BlankRightKitActionError.cannotCreate(url.lastPathComponent)
         }
     }
 
     public func clipboardText(for action: ActionID, context: ActionContext) throws -> String {
         let urls = context.effectiveURLs
-        guard !urls.isEmpty else { throw RightKitActionError.missingSelection }
+        guard !urls.isEmpty else { throw BlankRightKitActionError.missingSelection }
 
         switch action {
         case .copyPath:
@@ -81,13 +81,13 @@ public struct FileActionService {
         case .copyShellPath:
             return urls.map { shellEscaped($0.path) }.joined(separator: " ")
         default:
-            throw RightKitActionError.missingSelection
+            throw BlankRightKitActionError.missingSelection
         }
     }
 
     public func calculateSHA256(context: ActionContext) throws -> ActionOutcome {
         let files = context.selectedRegularFiles
-        guard !files.isEmpty else { throw RightKitActionError.missingSelection }
+        guard !files.isEmpty else { throw BlankRightKitActionError.missingSelection }
 
         let pairs = try files.map { url -> (String, String) in
             (try sha256(of: url), url.lastPathComponent)
@@ -100,13 +100,13 @@ public struct FileActionService {
 
     public func convertImages(context: ActionContext, to type: UTType) throws -> ActionOutcome {
         let files = context.selectedRegularFiles
-        guard !files.isEmpty else { throw RightKitActionError.missingSelection }
+        guard !files.isEmpty else { throw BlankRightKitActionError.missingSelection }
 
         let outputExtension = type == .png ? "png" : "jpg"
         let outputs = try files.map { sourceURL -> URL in
             guard let source = CGImageSourceCreateWithURL(sourceURL as CFURL, nil),
                   CGImageSourceGetCount(source) > 0 else {
-                throw RightKitActionError.unsupportedImage(sourceURL.lastPathComponent)
+                throw BlankRightKitActionError.unsupportedImage(sourceURL.lastPathComponent)
             }
 
             let outputURL = nameResolver.availableURL(
@@ -121,7 +121,7 @@ public struct FileActionService {
                 // file owned by this operation instead of racing another writer.
                 try Data().write(to: outputURL, options: .withoutOverwriting)
             } catch {
-                throw RightKitActionError.cannotCreate(outputURL.lastPathComponent)
+                throw BlankRightKitActionError.cannotCreate(outputURL.lastPathComponent)
             }
 
             guard let destination = CGImageDestinationCreateWithURL(
@@ -131,7 +131,7 @@ public struct FileActionService {
                 nil
             ) else {
                 try? fileManager.removeItem(at: outputURL)
-                throw RightKitActionError.imageConversionFailed(sourceURL.lastPathComponent)
+                throw BlankRightKitActionError.imageConversionFailed(sourceURL.lastPathComponent)
             }
 
             let options: CFDictionary
@@ -144,7 +144,7 @@ public struct FileActionService {
 
             guard CGImageDestinationFinalize(destination) else {
                 try? fileManager.removeItem(at: outputURL)
-                throw RightKitActionError.imageConversionFailed(sourceURL.lastPathComponent)
+                throw BlankRightKitActionError.imageConversionFailed(sourceURL.lastPathComponent)
             }
             return outputURL
         }
@@ -154,7 +154,7 @@ public struct FileActionService {
 
     public func sha256(of url: URL) throws -> String {
         guard let handle = try? FileHandle(forReadingFrom: url) else {
-            throw RightKitActionError.cannotRead(url.lastPathComponent)
+            throw BlankRightKitActionError.cannotRead(url.lastPathComponent)
         }
         defer { try? handle.close() }
 
@@ -164,7 +164,7 @@ public struct FileActionService {
                 hasher.update(data: data)
             }
         } catch {
-            throw RightKitActionError.cannotRead(url.lastPathComponent)
+            throw BlankRightKitActionError.cannotRead(url.lastPathComponent)
         }
         return hasher.finalize().map { String(format: "%02x", $0) }.joined()
     }

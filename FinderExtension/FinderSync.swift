@@ -17,12 +17,12 @@ final class FinderSync: FIFinderSync {
         FIFinderSyncController.default().directoryURLs = [URL(fileURLWithPath: "/", isDirectory: true)]
     }
 
-    override var toolbarItemName: String { "RightKit" }
+    override var toolbarItemName: String { "BlankRightKit" }
 
-    override var toolbarItemToolTip: String { "RightKit 文件工具" }
+    override var toolbarItemToolTip: String { "BlankRightKit 文件工具" }
 
     override var toolbarItemImage: NSImage {
-        NSImage(systemSymbolName: "cursorarrow.click.2", accessibilityDescription: "RightKit")
+        NSImage(systemSymbolName: "cursorarrow.click.2", accessibilityDescription: "BlankRightKit")
             ?? NSImage(size: NSSize(width: 18, height: 18))
     }
 
@@ -46,15 +46,15 @@ final class FinderSync: FIFinderSync {
         guard settings.groupIntoSubmenu else { return actionMenu }
 
         let outerMenu = NSMenu(title: "")
-        let rootItem = NSMenuItem(title: "RightKit", action: nil, keyEquivalent: "")
-        rootItem.image = NSImage(systemSymbolName: "cursorarrow.click.2", accessibilityDescription: "RightKit")
+        let rootItem = NSMenuItem(title: "BlankRightKit", action: nil, keyEquivalent: "")
+        rootItem.image = NSImage(systemSymbolName: "cursorarrow.click.2", accessibilityDescription: "BlankRightKit")
         rootItem.submenu = actionMenu
         outerMenu.addItem(rootItem)
         return outerMenu
     }
 
     private func buildActionMenu(sections: [(ActionSection, [ActionID])]) -> NSMenu {
-        let menu = NSMenu(title: "RightKit")
+        let menu = NSMenu(title: "BlankRightKit")
         for (sectionIndex, section) in sections.enumerated() {
             if sectionIndex > 0 { menu.addItem(.separator()) }
             for action in section.1 {
@@ -88,7 +88,7 @@ final class FinderSync: FIFinderSync {
             _ = try executor.execute(action, context: refreshed, settings: settingsStore.load())
         } catch {
             NSSound.beep()
-            NSLog("RightKit action failed: %@", error.localizedDescription)
+            NSLog("BlankRightKit action failed: %@", error.localizedDescription)
         }
     }
 }

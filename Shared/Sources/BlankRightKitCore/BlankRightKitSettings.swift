@@ -73,7 +73,7 @@ public struct NewFileTemplate: Codable, Equatable, Hashable, Sendable, Identifia
     ]
 }
 
-public struct RightKitSettings: Codable, Equatable, Sendable {
+public struct BlankRightKitSettings: Codable, Equatable, Sendable {
     public var enabledActions: Set<ActionID>
     public var orderedActions: [ActionID]
     public var groupIntoSubmenu: Bool
@@ -97,7 +97,7 @@ public struct RightKitSettings: Codable, Equatable, Sendable {
         self.templates = templates
     }
 
-    public static let `default` = RightKitSettings()
+    public static let `default` = BlankRightKitSettings()
 
     public mutating func normalize() {
         let known = Set(ActionID.allCases)
