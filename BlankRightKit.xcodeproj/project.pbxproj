@@ -12,6 +12,7 @@
 		0A94EA17B71A01D3A54C7A33 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425256BE6CC003714046EEAB /* SettingsStore.swift */; };
 		102C4BDAFBA5A9F7309EE316 /* BlankRightKitFinder.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 85E4C31021302107E6427698 /* BlankRightKitFinder.appex */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1FAE9DAB7E183EBBE40B3E0C /* ActionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FA721A9E14118C534027FC /* ActionContext.swift */; };
+		2743D465437A08FAEB0D1858 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4B6E8C89CADE1CE8EF0BB42 /* Assets.xcassets */; };
 		2D94E196AFCE6A1661F2CDE0 /* FinderSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A791BFD45725A89E70A524 /* FinderSync.swift */; };
 		300F708936AD9556DA640D4C /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504D24DBDE10E2B896BDF559 /* DashboardView.swift */; };
 		325048B059BD8D88F78D6C43 /* FinderSync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 361E22A6F277E2AD2D7BB08E /* FinderSync.framework */; };
@@ -73,6 +74,7 @@
 		788B3E83B329B19A5B3777BE /* ActionID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionID.swift; sourceTree = "<group>"; };
 		85E4C31021302107E6427698 /* BlankRightKitFinder.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BlankRightKitFinder.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E342206E9A474785DC1A915 /* CryptoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoKit.framework; path = System/Library/Frameworks/CryptoKit.framework; sourceTree = SDKROOT; };
+		A4B6E8C89CADE1CE8EF0BB42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC7E954812F5E119292E26FB /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		B2A322497332549ADDD8A49D /* ActionOutcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionOutcome.swift; sourceTree = "<group>"; };
 		B8661013B0FCDFC3354376C6 /* UniqueNameResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniqueNameResolver.swift; sourceTree = "<group>"; };
@@ -118,6 +120,14 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		22A561BFE739CF3A93844320 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A4B6E8C89CADE1CE8EF0BB42 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		330A1FA041B2A96E839EC88C /* FinderExtension */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +141,7 @@
 			children = (
 				188C32C9317C1085A789DAE6 /* App */,
 				330A1FA041B2A96E839EC88C /* FinderExtension */,
+				22A561BFE739CF3A93844320 /* Resources */,
 				9431EB69F0377A936985EF42 /* Shared */,
 				D365DE76A5ED99B44E65C6DE /* Frameworks */,
 				B0C1F83E8931267DCA765082 /* Products */,
@@ -225,6 +236,7 @@
 			buildConfigurationList = CE6919BF74ED537DA1793528 /* Build configuration list for PBXNativeTarget "BlankRightKit" */;
 			buildPhases = (
 				51E0ACB921DBE878F4D004B4 /* Sources */,
+				0ECE4D90D1B8BDBEF85BAA96 /* Resources */,
 				41E5FA093B1622463604743D /* Frameworks */,
 				C319EB8135656A98E1F35E78 /* Embed Foundation Extensions */,
 			);
@@ -276,6 +288,17 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0ECE4D90D1B8BDBEF85BAA96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2743D465437A08FAEB0D1858 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		51E0ACB921DBE878F4D004B4 /* Sources */ = {
@@ -358,7 +381,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -482,7 +505,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
