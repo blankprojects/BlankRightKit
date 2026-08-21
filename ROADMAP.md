@@ -5,15 +5,16 @@
 - [x] Finder Sync 右键与工具栏菜单
 - [x] 安全新建、路径复制、终端/编辑器、SHA-256、图片转换
 - [x] 功能开关、应用选择和模板设置
-- [x] App Group 共享设置
+- [x] App 与扩展共享 JSON 设置
 - [x] 核心单元测试与 XcodeGen 工程
+- [x] 可追踪菜单回调与动作结果的本地诊断日志
 - [ ] 在 Intel Mac、Apple Silicon 和主流 macOS 版本上做真机矩阵测试
 - [ ] 签名、notarization 和首个可下载 DMG
 
 ## 0.2 — 可靠性
 
 - 后台任务队列、进度与取消
-- 操作完成通知和可诊断日志
+- 操作完成通知和宿主 App 内诊断活动页
 - File Provider/iCloud Drive 兼容性测试矩阵
 - 英文与繁体中文本地化
 - VoiceOver 与键盘导航审计

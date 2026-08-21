@@ -1,0 +1,38 @@
+name: Question
+description: 询问构建、签名、设置或使用方式
+title: "[Question]: "
+labels: [question]
+body:
+  - type: markdown
+    attributes:
+      value: 请先阅读 README、SUPPORT 和安装说明，并搜索现有 Issue。
+
+  - type: textarea
+    id: question
+    attributes:
+      label: 问题
+      description: 说明你想完成什么、已经尝试了什么，以及卡在哪里。
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: 环境
+      placeholder: macOS 15.x，Xcode 16.x，Apple Silicon
+    validations:
+      required: true
+
+  - type: textarea
+    id: output
+    attributes:
+      label: 已脱敏的错误或日志
+      render: text
+
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: 隐私确认
+      options:
+        - label: 我已删除日志中的私人路径、凭据和文件内容。
+          required: true

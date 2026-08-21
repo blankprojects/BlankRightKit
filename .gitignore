@@ -3,9 +3,17 @@
 DerivedData/
 LocalDerivedData/
 SignedDerivedData/
+*.xcarchive
+*.xcresult
 *.xcuserstate
 xcuserdata/
 *.xccheckout
 *.xcscmblueprint
+*.cer
+*.p12
+*.mobileprovision
+*.provisionprofile
+.env
+.env.*
 build/
 work/

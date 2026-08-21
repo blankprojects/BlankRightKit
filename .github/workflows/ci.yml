@@ -2,12 +2,40 @@ name: CI
 
 on:
   push:
+    branches: [main]
   pull_request:
 
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  test:
+  test-and-build:
+    name: Test and unsigned app build
     runs-on: macos-15
+    timeout-minutes: 20
+
     steps:
-      - uses: actions/checkout@v4
-      - name: Swift tests
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Show toolchain
+        run: |
+          swift --version
+          xcodebuild -version
+
+      - name: Run unit tests
         run: swift test
+
+      - name: Build app without signing
+        run: |
+          xcodebuild \
+            -project BlankRightKit.xcodeproj \
+            -scheme BlankRightKit \
+            -configuration Debug \
+            -derivedDataPath "$RUNNER_TEMP/BlankRightKitDerivedData" \
+            CODE_SIGNING_ALLOWED=NO \
+            build
